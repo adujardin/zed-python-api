@@ -16,6 +16,8 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: |
+        wget https://download.stereolabs.com/zedsdk/2.8/ubuntu18 -O ZED_SDK.run
+        chmod +x ZED_SDK.run ; ./ZED_SDK.run --quiet -- silent
         python -m pip install --upgrade pip cython
         pip install setuptools wheel twine
         pip install -r requirements.txt
